@@ -1,0 +1,484 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+html, body {
+    font-family: 'Montserrat', sans-serif; 
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    background: url('portobg.jpg') no-repeat center center scroll;
+    background-size: cover;
+    height: 200%; /* Pastikan tinggi 100% */
+    overflow: auto; /* Pastikan scroll aktif */
+    overflow-x: hidden;
+}
+
+/* Scroll bar styling for WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 2px; /* Width of the scrollbar */
+    background-color: #0C0C0F /* Background color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px; /* Rounded corners for the scroll thumb */
+    border: 2px solid #FED582; /* Border around the scroll thumb */
+}
+
+/* Navigation Styles */
+nav {
+    background: transparent; /* Transparent background */
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    margin: 0;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 a {
+    color: #FED582; /* Navbar text color */
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px; /* Adjust gap between icons */
+}
+
+.social-icons a {
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 30px; /* Icon size */
+    height: 30px; /* Icon size */
+    transition: transform 0.3s ease; /* Transition effect */
+}
+
+.social-icons img:hover {
+    transform: scale(1.4); /* Scale effect on hover */
+}
+
+/* Section Styles */
+section {
+    height: 100vh; /* Full viewport height */
+    padding: 0; /* Hapus padding untuk menghindari ruang kosong */
+    margin: 0; /* Hapus margin untuk menghindari ruang kosong */
+    background-color: transparent; /* Background transparan untuk bagian yang akan diatur dengan gambar */
+    border-radius: 0; /* Hapus border-radius jika tidak diperlukan */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover; /* Gambar menutupi seluruh area section */
+    background-position: center; /* Posisi gambar di tengah */
+    background-repeat: no-repeat; /* Gambar tidak berulang */
+    scroll-snap-align: start; /* Snap ke awal section */
+    transition: opacity 2s ease; /* Transisi opacity yang mulus */
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Section Specific Styles */
+#introduction {
+    text-align: left; /* Align text to the left */
+    margin: 0px 0; /* Margin around the section */
+}
+
+#introduction h2 {
+    font-size: 3.3rem; /* Large font size for heading */
+    margin: 0; /* Remove default margin */
+    color: #fff; /* White text color */
+}
+
+#introduction p {
+    font-size: 1.5rem; /* Font size for paragraph */
+    margin: 10px 0; /* Margin around the paragraph */
+    color: #fff; /* White text color */
+}
+
+/* Container Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Intro Styles */
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.intro-text h2 {
+    font-size: 36px; 
+    margin: 0; /* Remove default margin */
+}
+
+.intro-image img {
+    width: 200px; /* Image width */
+    height: 200px; /* Image height */
+    border-radius: 50%; /* Circular image */
+    object-fit: cover; /* Cover image within dimensions */
+}
+
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns layout */
+    gap: 10px; /* Gap between each skill item */
+}
+
+.skills .skill-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid #FED582;
+    border-radius: 5px;
+    box-sizing: border-box;
+    height: 70px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.skills img {
+    width: 35px;
+    height: auto;
+    margin-right: 20px;
+    padding-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.skills .skill-text {
+    padding-right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    left: 85px;
+    top: 50%;
+    transform: translateY(-30%);
+    width: calc(100% - 100px);
+    background-color: transparent;
+    transition: padding-bottom 0.3s ease;
+}
+
+.skills .skill-name {
+    font-size: 1rem;
+    color: #FFFFFF;
+    font-weight: 600;
+    transition: transform 0.5s ease; /* Smoother transition for upward movement */
+}
+
+.skills .skill-level {
+    font-size: 1rem;
+    color: #FED582;
+    margin-top: 5px;
+    opacity: 0;
+    transform: translateY(-20px); /* Start from below */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Smoother transition */
+}
+
+.skills .skill-item:hover {
+    background-color: #fed58249;
+}
+
+.skills .skill-item:hover img {
+    transform: scale(1.3);
+}
+
+.skills .skill-item:hover .skill-name {
+    transform: translateY(-10px); /* Move name upwards */
+}
+
+.skills .skill-item:hover .skill-level {
+    opacity: 1;
+    transform: translateY(-10px); /* Move level into view */
+}
+
+/* Photo Container */
+.photo-container {
+    display: flex;
+    justify-content: center; /* Center align photo container */
+    align-items: center; /* Center align photo vertically */
+    margin: 20px 0; /* Margin around the container */
+}
+
+.photo-container img {
+    width: 500px; /* Photo width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 0%; /* Optional: remove border-radius for square photo */
+}
+
+
+/* Text Transform on Hover */
+.text-transform-on-hover {
+    transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth transition */
+}
+
+.text-transform-on-hover:hover {
+    transform: scale(1.15); /* Scale text on hover */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add text shadow on hover */
+}
+
+/* Keyframes for slide and fade-in animations */
+@keyframes slideFadeInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFadeInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply animation to introduction text */
+#introduction .intro-text {
+    animation: slideFadeInFromLeft 1.5s ease-out forwards;
+}
+
+/* Apply animation to introduction image */
+#introduction .photo-container img {
+    animation: slideFadeInFromRight 1.5s ease-out forwards;
+}
+
+@keyframes rotateText {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
+
+/* Container for rotating text */
+.text-rotator {
+    position: relative;
+    overflow: hidden; /* Hide text overflow */
+    height: 3rem; /* Adjust height to fit your text */
+}
+
+/* Text animation styling */
+.text-rotator p {
+    margin: 0;
+    font-size: 2.5rem !important; /* Font size of the rotating text */
+    line-height: 2; /* Adjust line height as needed */
+    animation: rotateText 19s linear infinite; /* Animation duration and repetition */
+    position: absolute;
+    width: 100%;
+    white-space: nowrap; /* Ensure text does not wrap */
+    font-weight: 500;
+    background: linear-gradient(to right, #ffffff, #FED582); /* Gradient background from white to #FED582 */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make the text color transparent so that the background shows through */
+    background-clip: text; /* Standard background clip */
+    text-fill-color: transparent; /* Standard text fill color for other browsers */
+}
+
+
+/* Responsive Design */
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+    body {
+        background-size: cover; /* Maintain cover background */
+    }
+    
+    nav h1 a {
+        font-size: 4vw; /* Adjust font size with viewport width */
+    }
+    
+    .social-icons {
+        margin-top: 2vw; /* Margin adjustment */
+        gap: 2vw; /* Adjust gap between icons */
+    }
+    
+    .social-icons img {
+        width: 4vw; /* Smaller icon size */
+        height: 4vw; /* Smaller icon size */
+    }
+    
+    .skills {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 2vw; /* Adjust gap between items */
+    }
+    
+    .intro {
+        flex-direction: column; /* Stack intro elements vertically */
+        text-align: center; /* Center align text */
+    }
+    
+    .intro-text h2 {
+        font-size: 5vw; /* Adjust font size */
+    }
+    
+    .intro-image img {
+        width: 25vw; /* Smaller image size */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+/* Tablets and Small Laptops */
+@media (max-width: 768px) {
+    nav {
+        padding: 2vw; /* Padding adjustment */
+    }
+    
+    nav h1 a {
+        font-size: 4vw; /* Adjust font size with viewport width */
+    }
+    
+    .social-icons {
+        margin-top: 2vw; /* Margin adjustment */
+        gap: 2vw; /* Adjust gap between icons */
+    }
+    
+    .skills {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns layout */
+        gap: 2vw; /* Adjust gap between items */
+    }
+    
+    .intro {
+        flex-direction: column; /* Stack intro elements vertically */
+        text-align: center; /* Center align text */
+    }
+    
+    .intro-text h2 {
+        font-size: 5vw; /* Adjust font size */
+    }
+    
+    .intro-image img {
+        width: 30vw; /* Smaller image size */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+/* Large Monitors and Split Monitors */
+@media (min-width: 1024px) {
+    .skills {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns layout */
+    }
+    
+    .intro {
+        flex-direction: row; /* Align intro elements in a row */
+        text-align: left; /* Align text to the left */
+    }
+    
+    .intro-text h2 {
+        font-size: 4vw; /* Adjust font size with viewport width */
+    }
+    
+    .intro-image img {
+        width: 20vw; /* Larger image size */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+/* About Me section */
+#about {
+    text-align: left; /* Align text to the left */
+    margin: 0px 0; /* Margin around the section */
+}
+  
+/* Portfolio section */
+#portfolio {
+    text-align: left; /* Align text to the left */
+    margin: 0px 0; /* Margin around the section */
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Isi dari kiri */
+    align-content: flex-start; /* Mengisi baris dari atas */
+}
+
+.project-item {
+    width: 300px;
+    text-align: center;
+    /* Border and background color */
+    border: 2px solid #404042;
+    background-color: #1E1E1F;
+    padding: 20px;
+    /* Ensure that the image and text fit within the item */
+    box-sizing: border-box;
+}
+
+.project-item img {
+    width: 100%; /* Ensure the image takes up the full width of the container */
+    height: 150px; /* Fixed height for all images */
+    object-fit: cover; /* Crop the image to fit the fixed dimensions without distortion */
+    border-bottom: 1px solid #242425; /* Optional: Add a border below the image */
+}
+
+.project-item a {
+    color: white; /* Make text color white */
+    font-weight: normal; /* Remove bold */
+    text-decoration: none; /* Remove underline if necessary */
+}
+
+
+.project-item h3 {
+    margin-top: 10px;
+    text-align: left;
+    font-size: 16px;
+}
+
+
+/* Honors and Awards section */
+#honors-awards {
+    text-align: left; /* Align text to the left */
+    margin: 0px; /* Margin around the section */
+}
+
+.award-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.award-display img {
+    width: auto; /* Let the image width adjust automatically */
+    height: auto; /* Let the image height adjust automatically */
+    max-width: 100%; /* Ensure the image doesn't exceed the container's width */
+    max-height: 400px; /* Optional: Set maximum height if needed */
+    object-fit: contain; /* Ensure the image fits within the container without cropping */
+    border-bottom: 1px solid #242425;
+}
+
+.award-navigation button {
+    background-color: #404042;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 20px;
+} 
+
+.award-navigation button:hover {
+    background-color: #616161;
+}
+
