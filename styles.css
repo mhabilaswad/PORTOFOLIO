@@ -482,3 +482,52 @@ section {
     background-color: #616161;
 }
 
+/* Responsive Design */
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+    body {
+        background-size: cover;
+    }
+    
+    nav h1 a {
+        font-size: 4vw;
+    }
+    
+    .social-icons {
+        margin-top: 2vw;
+        gap: 2vw;
+    }
+    
+    .social-icons img {
+        width: 4vw;
+        height: 4vw;
+    }
+    
+    .skills {
+        grid-template-columns: 1fr;
+        gap: 2vw;
+    }
+    
+    .intro {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .intro-text h2 {
+        font-size: 5vw;
+    }
+    
+    .intro-image img {
+        width: 50vw;
+        height: 50vw;
+    }
+    
+    #introduction p {
+        font-size: 4vw;
+    }
+    
+    .photo-container img {
+        width: 80%;
+    }
+}
